@@ -1,9 +1,9 @@
 #!r6rs
-;(library (ucl filesystem)
-;  (export touch symlink mkdir mkpath
-;          path-exists? path-file? path-dir?
-;          file-contents dir-contents
-;          remove-file remove-dir remove-recursive)
+(library (ucl filesystem)
+  (export touch symlink mkdir mkpath
+          path-exists? path-file? path-dir?
+          file-contents dir-contents
+          remove-file remove-dir remove-recursive)
 
   (import (rnrs) (ucl prelude) (ucl filesystem compat))
 
@@ -57,4 +57,4 @@
           (remove-dir path))
         (remove-file path)))
 
-;)
+)
