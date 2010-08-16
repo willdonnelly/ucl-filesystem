@@ -1,0 +1,17 @@
+(package ucl-filesystem (0 1)
+  (synopsis "UCL Filesystem Interface")
+  (description "Provides some more advanced facilities for querying \
+                and modifying the filesystem than R6RS Scheme offers.")
+  (category "UCL")
+
+  (author "Will Donnelly")
+  (email "wgd@willdonnelly.net")
+
+  (license BSD3)
+  (license-file "LICENSE")
+
+  (code "ucl/filesystem.sls")
+
+  (depends ucl-prelude ucl-ffi)
+
+  (schemes ikarus mosh ypsilon plt larceny))
