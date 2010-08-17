@@ -21,11 +21,9 @@
 
   (define (dir-exists? path)
     (let ((dirstream (raw-opendir path)))
-      (if (zero? (pointer->integer dirstream))
+      (if (null-ptr? dirstream)
           #f
-          (begin
-            (raw-closedir dirstream)
-            #t))))
+          (begin (raw-closedir dirstream) #t))))
 
   (define (dir-contents path)
     (error 'dir-contents "not implemented in the FFI fallback yet, sorry"))
