@@ -1,7 +1,7 @@
 #!r6rs
 (library (ucl filesystem compat)
   (export symlink mkdir dir-exists? dir-contents
-          remove-file remove-dir)
+          remove-dir)
   (import (rnrs) (scheme mpair)
     (only (scheme base)
       make-directory directory-exists?
@@ -16,6 +16,5 @@
     (map path->string
       (list->mlist
         (directory-list path))))
-  (define remove-file delete-file)
   (define remove-dir delete-directory)
 )

@@ -1,6 +1,6 @@
 #!r6rs
 (library (ucl filesystem libc)
-  (export symlink mkdir dir-exists? dir-contents remove-file remove-dir)
+  (export symlink mkdir dir-exists? dir-contents remove-dir)
   (import (rnrs) (ucl prelude) (ucl ffi))
 
   (define libc (load-library "libc.so.6" "libc.so"))
@@ -29,11 +29,6 @@
 
   (define (dir-contents path)
     (error 'dir-contents "not implemented in the FFI fallback yet, sorry"))
-
-  (define raw-unlink (get-function libc "unlink" '(string) 'sint))
-  (define (remove-file path)
-    (unless (zero? (raw-unlink path))
-      (error 'remove-file (template "unable to remove file '%'" path))))
 
   (define raw-rmdir  (get-function libc "rmdir"  '(string) 'sint))
   (define (remove-dir path)
