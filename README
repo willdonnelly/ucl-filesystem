@@ -1,0 +1,33 @@
+UCL FILESYSTEM
+==============
+
+Augments the R6RS filesystem interactions with a few extra functions.
+
+SYMLINK target name
+  Create a symbolic link at NAME, which will point to TARGET
+
+MKDIR path
+  Create a directory at PATH
+
+MKPATH path
+  Create a directory tree at PATH. Equivalent to the 'mkdir -p' shell command
+
+REMOVE-DIR path
+  Remove a directory at PATH, but only if empty. Errors out otherwise.
+
+REMOVE-RECURSIVE path
+  Remove a directory and its contents at PATH.
+
+DIR-CONTENTS path
+  List the contents of PATH. Does not include "." or "..", but does include
+  any other dotfiles.
+
+PATH-EXISTS? path
+  Returns true if something exists at PATH, regardless of type. In all schemes
+  other than PLT, this should be identical to FILE-EXISTS?
+
+PATH-FILE? path
+  Returns true *only* if the 'something' at PATH is a file and not a directory
+
+PATH-DIR? path
+  Like PATH-FILE?, but for directories instead of files.
