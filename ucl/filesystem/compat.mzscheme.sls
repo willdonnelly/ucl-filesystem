@@ -12,7 +12,10 @@
   (define (symlink a b) (make-file-or-directory-link a b))
   (define mkdir make-directory)
   (define dir-exists? directory-exists?)
-  (define (dir-contents path) (map path->string (list->mlist (directory-list path))))
+  (define (dir-contents path)
+    (map path->string
+      (list->mlist
+        (directory-list path))))
   (define remove-file delete-file)
   (define remove-dir delete-directory)
 )
