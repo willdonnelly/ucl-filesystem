@@ -1,14 +1,10 @@
 #!r6rs
 (library (ucl filesystem)
-  (export touch symlink
-          mkdir mkpath
+  (export symlink mkdir mkpath
           remove-dir remove-recursive
-          dir-contents
-          path-exists? path-file? path-dir?)
+          dir-contents path-exists? path-file? path-dir?)
 
   (import (rnrs) (ucl prelude) (ucl filesystem compat))
-
-  (define (touch path) (with-output-to-file path (lambda () #t)))
 
   ; symlink comes from the compat module
 
